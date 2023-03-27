@@ -1,0 +1,107 @@
+body{
+    padding-top: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card {
+    font-family: sans-serif;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    margin-bottom:3em;
+    border-radius: 10px;
+    background-color: #ffff;
+    padding: 1.8rem;
+    box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.1);
+}
+.title {
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+}
+.subtitle {
+    text-align: center;
+    font-weight: bold;
+}
+
+.title-name-birth label {
+    color: rgb(170 166 166);
+}
+.user-email-mdp label {
+    color: rgb(170 166 166);
+}
+
+#input{
+    width: 100%;
+    padding: 15px 20px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #499b4a;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.cta-btn {
+    background-color: #499b4a;
+    color: white;
+    padding: 18px 20px;
+    margin-top: 3%;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+}
+textarea{
+    width:100%;
+    height: 80px;
+    margin-top: 8px;
+    padding: 15px 20px;
+    border: 1px solid #499b4a;
+    border-radius: 8px
+}
+.contact-info {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+.ul-contact {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.li-contact{
+    list-style: none;
+    margin: 5px 0;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+.circle {
+    width: 50px;
+    height: 50px;
+    background: #499b4a;
+    border-radius: 50%;
+    margin-right: 15px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    font-size: 0.9rem;
+}
+@media screen and (max-width: 992px) {
+    .contact-info {
+        flex-direction: column;
+    }
+    .li-contact{
+        flex-direction: column;
+    }
+    .card{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}

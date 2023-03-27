@@ -1,0 +1,43 @@
+footer{
+    position: relative;
+    bottom: 0;
+}
+section h6 {
+    color: #499b4a;
+}
+
+section p, h6 {
+    color: #499b4a;
+    text-align: left;
+}
+
+div a {
+    color: #499b4a;
+}
+
+
+.flecheTop img{
+    height: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+}
+
+#size-rue{
+    width: auto;
+}
+
+.line-separation{
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(245 239 239);
+    line-height: 0.1em;
+    margin: 25px 0;
+}
+
+@media only screen and (max-width: 768px) {
+    /* Style pour les téléphones */
+    .flecheTop {
+        display: none;
+    }
+}

@@ -1,0 +1,83 @@
+.background-about{
+    background-image: radial-gradient(at center center, #499b4a -20%, #ffffff 70%);
+}
+.about-category{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.image-category img{
+    height: 300px;
+    width: 100%;
+}
+
+.Titre-category{
+    text-align: center;
+    margin-top: 3%;
+    height: 400px;
+}
+
+.Titre-category h1{
+    width: 300px;
+}
+
+.Titre-category p{
+    width: 300px;
+    text-align: justify;
+}
+
+.btn-green button{
+    background: #499b4a;
+    color: white;
+}
+
+
+.btn-green:hover{
+    background: #0f5132;
+    color: white;
+    border-radius: 0.375rem;
+}
+
+.filter{
+    display: flex;
+    justify-content: space-around;
+    background-color: lightgray;
+    padding:10px;
+}
+
+
+/* RESPONSIVE PASSER DEUX 3 produits par ligne à 2*/
+@media (max-width: 1200px){
+    .col-lg-4{
+        width: 50%;
+    }
+}
+/* RESPONSIVE PASSER DEUX 2 produits par ligne à 1*/
+@media (max-width: 768px){
+    .col-lg-4{
+        width: 100%;
+    }
+    .about-category{
+        display: flex;
+        flex-direction: column;
+    }
+    .Titre-category h1{
+        width: 200px;
+        margin: 0 auto;
+    }
+    .Titre-category p{
+        margin: 0 auto;
+    }
+    .image-category{
+        margin: 0 auto;
+    }
+    .filter{
+        flex-direction: column;
+    }
+
+}
+
+.products-div{
+    margin-top: 2%;
+}
