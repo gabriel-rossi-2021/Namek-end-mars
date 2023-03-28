@@ -75,6 +75,9 @@
     .filter{
         flex-direction: column;
     }
+    .background-about{
+        background-image: radial-gradient(at center center, #499b4a -20%, #ffffff 90%);
+    }
 
 }
 
