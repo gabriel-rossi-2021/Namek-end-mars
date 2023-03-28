@@ -19,10 +19,21 @@ class User extends Authenticatable
     }
 
     protected $fillable = [
-        'name',
+        'title',
+        'phone_number',
+        'first_name',
+        'last_name',
+        'username',
         'email',
         'password',
+        'birth_date',
+        'function_id',
     ];
+
+    public function function()
+    {
+        return $this->belongsTo(Functions::class);
+    }
 
     public function setPasswordAttribute($password)
     {
