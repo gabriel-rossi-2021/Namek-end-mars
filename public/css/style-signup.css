@@ -6,6 +6,14 @@ a {
     text-decoration: none;
 }
 
+h3{
+    color: #499b4a;
+}
+
+td p{
+    color: red;
+}
+
 .card {
     font-family: sans-serif;
     width: 800px;
@@ -48,7 +56,7 @@ a {
 
 #input{
     width: 95%;
-    padding: 15px 20px;
+    padding: 10px 10px;
     margin-top: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
