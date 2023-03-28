@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\shop;
 
 use App\Http\Controllers\Controller;
+use App\Models\Address;
 use App\Models\Category;
 use App\Models\Login;
 use App\Models\Product;
@@ -140,31 +141,59 @@ class MainController extends Controller
     // CREATION UTILISATEUR
     public function register(Request $request)
     {
+
+        // Variable qui stock le pays par defaut
+        $PaysParDefaut = 'Suisse';
+
         // Valider les données du formulaire
         $validatedData = $request->validate([
             'titre' => 'required|max:50',
             'phone' => 'required',
             'name' => 'required|string|max:50',
-            'last_name' => 'required|string|max:50',
+            'lastName' => 'required|string|max:50',
             'username' => 'required|string|max:50|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
             'psw' => 'required',
+            'confirm-psw' => 'required|same:psw',
             'birth' => 'required|date|before_or_equal:'.now()->subYears(18)->format('Y-m-d'),
+            'rue' => 'required',
+            'num-rue' => 'required',
+            'ville' => 'required',
+            'npa' => 'required',
         ]);
 
         $password = $validatedData['psw'];
+
+        // Vérifier si le mot de passe correspond à la confirmation
+        if ($password !== $validatedData['confirm-psw']) {
+            return redirect()->back()->withErrors(['password' => 'Le mot de passe et la confirmation ne correspondent pas.'])->withInput();
+        }
 
         // Créer un nouvel utilisateur
         $user = new User();
         $user->title = $validatedData['titre'];
         $user->phone_number = $validatedData['phone'];
         $user->first_name = $validatedData['name'];
-        $user->last_name = $validatedData['last_name'];
+        $user->last_name = $validatedData['lastName'];
         $user->username = $validatedData['username'];
         $user->email = $validatedData['email'];
         $user->password = bcrypt($password . $this->salt);
         $user->birth_date = $validatedData['birth'];
         $user->function_id = 3;
+
+        // Créer une nouvelle adresse
+        $address = new Address();
+        $address->street = $validatedData['rue'];
+        $address->street_number = $validatedData['num-rue'];
+        $address->city = $validatedData['ville'];
+        $address->NPA = $validatedData['npa'];
+        $address->country = $PaysParDefaut;
+        $address->save();
+
+        // Lier l'adresse à l'utilisateur
+        $user->address()->associate($address);
+
+        // Enregistrer l'utilisateur
         $user->save();
 
         // Connecter l'utilisateur
