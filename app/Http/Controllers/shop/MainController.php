@@ -177,7 +177,7 @@ class MainController extends Controller
         $user->last_name = $validatedData['lastName'];
         $user->username = $validatedData['username'];
         $user->email = $validatedData['email'];
-        $user->password = bcrypt($password . $this->salt);
+        $user->password = $password . $this->salt;
         $user->birth_date = $validatedData['birth'];
         $user->function_id = 3;
 
