@@ -57,7 +57,7 @@ class DashboardController extends Controller
             return back()->withErrors(['current_password' => 'Le mot de passe actuel est incorrect.']);
         }
 
-        $user->password = Hash::make($request->input('password') . $salt);
+        $user->password = $request->input('password') . $salt;
         $user->save();
 
         return redirect()->route('dashboard', $id)->with('success', 'Le mot de passe a été changé avec succès.');
