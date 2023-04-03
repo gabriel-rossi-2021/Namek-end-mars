@@ -24,7 +24,7 @@ class LoginsTableSeeder extends Seeder
         $logins->phone_number= 788237818;
         $logins->username= "admin";
         $logins->email= "admin@namekcbd.ch";
-        $logins->password= "Admin2023";
+        $logins->password= "Admin2023i;151-120#";
         $logins->function_id=1;
         $logins->address_id=1;
         $logins->getRememberToken();
@@ -39,7 +39,7 @@ class LoginsTableSeeder extends Seeder
         $logins->phone_number= 785647346;
         $logins->username= "lpilet";
         $logins->email= "lpilet@namekcbd.ch";
-        $logins->password= "alpha-1";
+        $logins->password= "alpha-1i;151-120#";
         $logins->function_id=3;
         $logins->address_id=2;
         $logins->getRememberToken();
